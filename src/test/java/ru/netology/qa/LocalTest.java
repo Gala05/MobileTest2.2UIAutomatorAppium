@@ -54,8 +54,7 @@ public class LocalTest {
     @Test
     @DisplayName("Test for trying to set an empty string")
     public void testEmptyField() {
-        var el0 = driver.findElementById("ru.netology.testing.uiautomator:id/textToBeChanged");
-        el0.isDisplayed();
+        String el0 = driver.findElementById("ru.netology.testing.uiautomator:id/textToBeChanged").getText();
         var el1 = driver.findElementById("ru.netology.testing.uiautomator:id/userInput");
         el1.isDisplayed();
         el1.click();
@@ -65,7 +64,7 @@ public class LocalTest {
         el2.click();
         var el3 = driver.findElementById("ru.netology.testing.uiautomator:id/textToBeChanged");
         el3.isDisplayed();
-        Assertions.assertEquals(el3.getText(), el0.getText());
+        Assertions.assertEquals(el3.getText(), el0);
     }
 
     @Test
